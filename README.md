@@ -1,4 +1,4 @@
-JavaScript TimeZone Converter ( for rails apps )
+JavaScript TimeZone Converter ( for rails )
 ===========================
 
 JavaScript Timezone converter library for rails applications.

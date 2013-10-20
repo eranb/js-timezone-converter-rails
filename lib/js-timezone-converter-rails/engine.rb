@@ -9,11 +9,11 @@ module JSTimeZoneConverterRails
 
   module Helper
     def js_timezone_converter_data
-      content_tag "div", "", id: 'js_timezone_converter_data', data: { 
+      content_tag "div", "", id: 'js_timezone_converter_data', data: {
         timezones: Hash[ActiveSupport::TimeZone::MAPPING.keys.map { |zone|
             tz = ActiveSupport::TimeZone.new zone
             offset = tz.utc_offset
-            dst = tz.period_for_local(Time.now,true).dst?
+            dst = tz.period_for_local(Time.now,true).dst? rescue false
             [zone, dst ? (offset + 3600): offset]
         }]
       }
